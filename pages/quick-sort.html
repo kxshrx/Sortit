@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Sort - Sorting Algorithm Visualizer</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/base.css">
+    <script src="../components/navbar.js"></script>
+    <script src="../components/sidebar.js"></script>
+    <script src="../components/footer.js"></script>
+</head>
+
+<body>
+    <app-navbar></app-navbar>
+    <app-sidebar></app-sidebar>
+
+    <main class="main-content">
+        <div class="selections">
+            <div class="rightselection">
+                <div class="learn">
+                    <button class="learn-button button-67">LEARN</button>
+                </div>
+                <div class="temp">
+                    <button class="randomize button-67" id="randomize">SHUFFLE</button>
+                </div>
+                <div class="sort">
+                    <button class="sorting button-67" id="sorting">SORT</button>
+                </div>
+            </div>
+
+            <div class="rangeslider">
+                <input type="range" min="2" max="100" value="50" class="slider" id="myRange">
+                <div id="slidervalue">4</div>
+            </div>
+        </div>
+
+        <div class="visualization-container">
+            <div class="main"></div>
+        </div>
+
+        <div id="learnModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeLearnModal">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </span>
+                <h2 class="sortname">Quick Sort</h2>
+                <p class="description">
+                    Quick Sort is a highly efficient, comparison-based sorting algorithm that uses a divide-and-conquer strategy. 
+                    It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, 
+                    according to whether they are less than or greater than the pivot. The sub-arrays are then sorted recursively. 
+                    Quick Sort is known for its efficiency and is commonly used as a general-purpose sorting algorithm.
+                </p>
+               
+                <div class="complexity">
+                    <h2>Complexity</h2>
+                    <table>
+                        <tr>
+                            <th>Case</th>
+                            <th>Time Complexity</th>
+                            <th>Space Complexity</th>
+                        </tr>
+                        <tr>
+                            <td>Best Case</td>
+                            <td>O(n log n)</td>
+                            <td>O(log n)</td>
+                        </tr>
+                        <tr>
+                            <td>Worst Case</td>
+                            <td>O(n²)</td>
+                            <td>O(log n)</td>
+                        </tr>
+                        <tr>
+                            <td>Average Case</td>
+                            <td>O(n log n)</td>
+                            <td>O(log n)</td>
+                        </tr>
+                    </table>
+                </div>
+        
+                <h2 class="ref">References</h2>
+                <ul class="ref-links">
+                    <li><a href="https://en.wikipedia.org/wiki/Quicksort" target="_blank">Quick Sort on Wikipedia</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/quick-sort/" target="_blank">Quick Sort on GeeksforGeeks</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <app-footer></app-footer>
+
+    <script src="../js/quick-sort.js"></script>
+</body>
+
+</html>

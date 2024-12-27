@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SortIt - Sorting Algorithm Visualizer</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/base.css">
+</head>
+
+<body>
+    <!-- Include JS files for components -->
+    <script src="components/navbar.js"></script>
+    <script src="components/sidebar.js"></script>
+    <script src="components/footer.js"></script>
+
+    <!-- Navbar component -->
+    <app-navbar></app-navbar>
+
+    <!-- Sidebar component -->
+    <app-sidebar></app-sidebar>
+
+    <main class="main-content">
+        <div class="home-content">
+            <h1 class="greeting" id="greeting"></h1>
+            <p class="description">Visualize and understand sorting algorithms through interactive animations</p>
+            <!-- Button to open Sidebar -->
+            <button class="explore-btn" onclick="openSidebar(event)">Explore Algorithms</button>
+        </div>
+    </main>
+
+    <!-- Footer component -->
+    <app-footer></app-footer>
+
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM fully loaded');
+            console.log('openSidebar function exists:', typeof window.openSidebar === 'function');
+            
+            // Test if sidebar element exists
+            const sidebar = document.querySelector('#sidebar');
+            console.log('Sidebar element exists:', !!sidebar);
+
+            // Add motion greeting effect
+            const greets = ["WELCOME"];
+            const writing_speed = 150;
+            let greetindex = 0;
+            let charIndex = 0;
+            let greet = document.getElementById("greeting");
+
+            function writing() {
+                if (greetindex < greets.length) {
+                    if (charIndex < greets[greetindex].length) {
+                        greet.innerHTML += greets[greetindex][charIndex];
+                        charIndex++;
+                        setTimeout(writing, writing_speed);
+                    } else {
+                        greetindex++;
+                        charIndex = 0;
+                        setTimeout(writing, writing_speed);
+                    }
+                }
+            }
+            writing();
+        });
+    </script>
+</body>
+
+</html>

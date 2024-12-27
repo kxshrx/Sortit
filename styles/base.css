@@ -1,0 +1,679 @@
+/* Import refined fonts - Montserrat for headings and Raleway for body */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap');
+
+:root {
+    /* Colors */
+    --background-dark: #1F1C2C;
+    --background-light: #928DAB;
+    --primary-accent: #B8A4FF;
+    --secondary-accent: #7E6FD9;
+    --text-primary: #FFFFFF;
+    --text-secondary: #E0E0E0;
+    --error: #FF6B6B;
+    --success: #51CF66;
+    --tertiary-accent: #4FFFB0;
+    --border-color: rgba(184, 164, 255, 0.2);
+    --gradient-1: linear-gradient(135deg, var(--primary-accent), var(--tertiary-accent));
+    --gradient-2: linear-gradient(45deg, var(--secondary-accent), var(--primary-accent));
+    --text-muted: #9BA4B4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    background: #1F1C2C;  /* fallback */
+    background: -webkit-linear-gradient(to top, #928DAB, #1F1C2C);
+    background: linear-gradient(to top, #928DAB, #1F1C2C);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.8;
+    letter-spacing: 0.03em;
+}
+
+/* Hide scrollbar but keep functionality */
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+main {
+    margin-top: 80px; /* Add space for fixed navbar */
+    flex: 1;
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6, .name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: 0.15em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.name {
+    font-size: 2.8rem;
+    letter-spacing: 0.2em;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.5rem;
+}
+
+p, .para {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    line-height: 2;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+}
+
+/* Navigation */
+.nav {
+    padding: 2.5rem 5rem;
+    background: rgba(26, 53, 65, 0.85);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.name {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-item {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    padding: 1.2rem 2rem;
+    color: var(--text-primary);
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.nav-item::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: var(--gradient-1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-item:hover::before {
+    width: 100%;
+}
+
+.nav-item:hover {
+    color: var(--primary-accent);
+    transform: translateY(-2px);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+/* Buttons */
+.button-67 {
+    background: transparent;
+    border: none;
+    padding: 1.2rem 3rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    position: relative;
+    isolation: isolate;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-67::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-1);
+    z-index: -2;
+    border-radius: 4px;
+}
+
+.button-67::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: var(--background-dark);
+    z-index: -1;
+    border-radius: 2px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-67:hover::after {
+    opacity: 0.5;
+    background: transparent;
+}
+
+.button-67:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(184, 164, 255, 0.2);
+}
+
+.button-67:active {
+    transform: translateY(-1px);
+}
+
+/* Greeting */
+.greeting {
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
+    font-size: 5.5rem;
+    letter-spacing: 0.2em;
+    color: var(--text-primary);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 3rem 0;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.greeting::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 150px;
+    height: 4px;
+    background: var(--gradient-1);
+}
+
+/* Sidebar */
+.sidebar {
+    background: rgba(26, 53, 65, 0.9);
+    backdrop-filter: blur(15px);
+    border-right: 1px solid var(--border-color);
+    padding: 3rem 0;
+}
+
+.sidebar a {
+    color: var(--text-secondary);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    padding: 1.2rem 2.5rem;
+    margin: 0.8rem 0;
+    display: block;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 3px solid transparent;
+    text-transform: uppercase;
+}
+
+.sidebar a:hover {
+    color: var(--primary-accent);
+    background: rgba(184, 164, 255, 0.05);
+    border-left: 3px solid var(--primary-accent);
+    transform: translateX(10px);
+}
+
+/* Cards and Content */
+.card-container {
+    background: rgba(26, 53, 65, 0.7);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2.5rem;
+    margin: 1.5rem;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: var(--primary-accent);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-1);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gradient-2);
+}
+
+/* Links and Navigation */
+a {
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-accent);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: middle;
+}
+
+.menusvg, .name {
+    display: flex;
+    padding-left: 2rem;
+    color: white;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-item {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+}
+
+.nav-item:hover {
+    color: var(--primary-accent);
+    transform: translateY(-2px);
+}
+
+.menu:hover {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 280px) {
+    body {
+        overflow: auto;
+    }
+
+    .nav {
+        font-size: 0.6rem !important;
+    }
+
+    .nav-item {
+        padding-right: 0.5rem;
+    }
+
+    .primary {
+        font-size: 0.5rem;
+    }
+
+    .greeting {
+        font-size: 2rem;
+    }
+
+    .para {
+        font-size: 0.5rem;
+        width: 80%;
+    }
+
+    .card-container h6, p {
+        font-size: 0.5rem !important;
+    }
+
+    .card-container h3 {
+        font-size: 0.7rem;
+    }
+
+    .skills {
+        font-size: 0.7rem !important;
+    }
+
+    .card-container {
+        width: 80% !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .menusvg, .name {
+        display: flex;
+        padding-left: 0.7rem;
+        color: white;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 281px) and (max-width: 320px) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: auto;
+    }
+
+    .nav {
+        font-size: 0.7rem;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.3rem;
+    }
+
+    .primary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+        font-size: 0.7rem;
+    }
+
+    .card-container {
+        width: 60% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .greeting {
+        font-size: 3rem !important;
+    }
+
+    .para {
+        font-size: 0.7rem;
+        width: 80%;
+    }
+
+    .skills p {
+        font-size: 0.7rem;
+    }
+
+    .card-container p {
+        font-size: 0.7rem;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+    body {
+        font-size: 1rem;
+        -ms-overflow-style: thin;
+        scrollbar-width: thin;
+        overflow: auto;
+        background-repeat: repeat;
+    }
+
+    .main {
+        overflow: auto;
+    }
+
+    .sidebar {
+        overflow: auto;
+    }
+
+    .greeting {
+        font-size: 3rem;
+    }
+
+    .para {
+        font-size: 0.7rem;
+        width: 70%;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-container {
+        height: 60%;
+        width: 50%;
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-container p {
+        font-size: 0.7rem;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    button.primary {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.5rem;
+        width: 40%;
+        height: 40%;
+    }
+
+    .nav-item {
+        padding-right: 0.8rem;
+    }
+
+    .nav {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .main {
+        overflow: auto;
+    }
+
+    body {
+        overflow: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-repeat: repeat;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-container {
+        width: 50%;
+    }
+
+    .card-container p {
+        font-size: 0.7rem;
+    }
+
+    .primary {
+        font-size: 0.7rem;
+    }
+
+    .greeting {
+        font-size: 3rem;
+    }
+
+    .para {
+        font-size: 0.8rem;
+        width: 70%;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .nav {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    body {
+        overflow: auto;
+        background-repeat: repeat;
+    }
+
+    .card-container p {
+        font-size: 0.7rem;
+    }
+
+    .para {
+        font-size: 0.8rem;
+        width: 70%;
+    }
+
+    .primary {
+        font-size: 0.7rem;
+    }
+
+    .greeting {
+        font-size: 4rem;
+    }
+
+    .nav {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    body {
+        overflow: auto;
+        background-repeat: repeat;
+    }
+
+    .nav {
+        font-size: 1rem;
+    }
+
+    .para {
+        font-size: 0.9rem;
+        width: 70%;
+    }
+
+    .greeting {
+        font-size: 4.5rem;
+    }
+
+    .card-container p {
+        font-size: 0.7rem;
+    }
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #1a1a1a;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #4CAF50;
+}
