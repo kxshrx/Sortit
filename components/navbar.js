@@ -129,7 +129,7 @@ class Navbar extends HTMLElement {
                         ${algorithmName}
                     </div>
                     <div class="nav-right">
-                        <a href="https://github.com/username/Sorting-Visualizer" target="_blank">
+                        <a href="https://github.com/kxshrx/Sortit" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path
