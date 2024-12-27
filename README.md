@@ -2,6 +2,8 @@
 
 A web application to visualize sorting algorithms in action. Watch how different sorting algorithms work step by step with interactive controls.
 
+🌐 **[Live Demo](https://kxshrx.github.io/Sortit/)**
+
 ## 📊 Available Algorithms
 
 - Bubble Sort
@@ -38,7 +40,7 @@ A web application to visualize sorting algorithms in action. Watch how different
 
 1. Clone the repository
 ```bash
-git clone https://github.com/kxshrx/Sorting-Visualizer.git
+git clone https://github.com/kxshrx/Sortit.git
 ```
 
 2. Open `index.html` in your browser
